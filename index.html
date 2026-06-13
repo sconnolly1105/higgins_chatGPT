@@ -492,6 +492,10 @@ function renderFamilyTreeJSON(rootData, targetUlId = "org") {
 /***** UI helpers kept compatible with your existing flow *****/
 function processXMLData(htmlString) {
   // Simple sanitizer for this context: treat as HTML snippet from trusted XML.
+  htmlString = htmlString.replace(/#b#/gi, "<b>");
+  htmlString = htmlString.replace(/#!b#/gi, "</b>");
+  htmlString = htmlString.replace(/#u#/gi, "<u>");
+  htmlString = htmlString.replace(/#!u#/gi, "</u>");  
   const inner = document.getElementById("inner");
   inner.innerHTML = htmlString && htmlString.trim().length ? htmlString : "No information on this individual.";
   // Show panel
