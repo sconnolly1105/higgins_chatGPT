@@ -495,7 +495,8 @@ function processXMLData(htmlString) {
   htmlString = htmlString.replace(/#b#/gi, "<b>");
   htmlString = htmlString.replace(/#!b#/gi, "</b>");
   htmlString = htmlString.replace(/#u#/gi, "<u>");
-  htmlString = htmlString.replace(/#!u#/gi, "</u>");  
+  htmlString = htmlString.replace(/#!u#/gi, "</u>");
+  htmlString = htmlString.replace(/\n/g, "<br>");
   const inner = document.getElementById("inner");
   inner.innerHTML = htmlString && htmlString.trim().length ? htmlString : "No information on this individual.";
   // Show panel
