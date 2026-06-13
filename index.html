@@ -496,7 +496,8 @@ function processXMLData(htmlString) {
   inner.innerHTML = htmlString && htmlString.trim().length ? htmlString : "No information on this individual.";
   // Show panel
   const outer = document.getElementById("outer");
-  if (outer.style.display === "none") outer.style.display = "block";
+//  if (outer.style.display === "none") outer.style.display = "block"; - line removed by S. Connolly
+  outer.style.display = "block";    // added S. Connolly
   return false;
 }
 
